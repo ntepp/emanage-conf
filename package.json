@@ -1,0 +1,26 @@
+{
+  "name": "emanageconf",
+  "version": "1.0.0",
+  "description": "register and monitor conference participant",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntepp/emanage-conf.git"
+  },
+  "keywords": [
+    "emanage-conf"
+  ],
+  "author": "Ntepp Jean Marc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntepp/emanage-conf/issues"
+  },
+  "homepage": "https://github.com/ntepp/emanage-conf#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}
