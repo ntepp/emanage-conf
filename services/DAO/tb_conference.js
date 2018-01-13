@@ -26,5 +26,46 @@ var select = function select(connection, callback){
 	});
 }
 
+var selectById = function selectById(connection, id, callback){
+    connection.query('SELECT * FROM conference WHERE conferenceId = ?', [id], function(err, result, item){
+        if(err){
+            callback(err,null);
+            console.log('Error '+ err );
+            return;
+        }else{
+            callback(null,result);
+        }
+
+    });
+
+}
+
+var selectByConference = function selectByConference(connection, id, callback){
+
+    connection.query('SELECT * FROM conference WHERE conferenceNbrVisitor = ?', [id], function(err, result, item){
+        if(err){
+            callback(err,null);
+            console.log('Error '+ err );
+            return;
+        }else{
+            callback(null,result);
+        }
+
+    });
+
+}
+
+var update = function update(connection, categorieData){
+    connection.query('UPDATE conference SET ? ', categorieData , function(err, rows, fields) {
+        if (!err)
+            console.log('update rows: ', rows);
+        else
+            console.log('Erreur lors de la mise à jour.\n' +err);
+    });
+}
+
 exports.insert = insert;
 exports.select = select;
+exports.selectById = selectById;
+exports.selectByConference = selectByConference;
+exports.update = update;
